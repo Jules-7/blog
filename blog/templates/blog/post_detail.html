@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% load bootstrap3 %}
+
+{% block title %}
+    <h1>{{ object.title|title }}</h1>
+{% endblock %}
+
+{% block content %}
+
+    <p>{{ object.content|safe }}</p>
+    <p>User: {{ object.user }}</p>
+    <p>Published: {{ object.pub_date|date }}</p>
+{% endblock %}

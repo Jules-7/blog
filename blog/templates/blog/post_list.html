@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    <h1>Posts</h1>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="nav-right">
+                {% for post in object_list %}
+                     <a href="{{ post.get_absolute_url }}">{{ post.title }}</a><br>
+                     <a href="{{ post.get_absolute_url }}">{{ post.content|truncatechars:50|safe }}</a><br>
+                    {{ post.pub_date|date }}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

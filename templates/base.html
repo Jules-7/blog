@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{#{% load bootstrap3 %}#}
+{#{% bootstrap_css %}#}
+{#{% bootstrap_javascript %}#}
+{#{% bootstrap_messages %}#}
+
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- Bootstrap -->
+    <script src="{{ STATIC_URL }}js/jquery-1.11.3.min.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+{#    <link href="{% static 'css/bootstrap-fluid-adj.css' %}" rel="stylesheet">#}
+    <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="{{ STATIC_URL }}css/bootstrap-responsive.css" rel="stylesheet">
+
+</head>
+<body>
+
+{% block title %}<h1>Blog</h1>{% endblock %}
+
+{% block content %}
+
+<div class="top_nav">
+    <a href="{% url "categories_list" %}">Categories</a><br>
+    <a href="{% url 'posts_list' %}">Posts</a><br>
+</div>
+{% endblock %}
+
+{% block footer %}
+    <br><a href="{% url "main_page" %}">Main page</a><br>
+{% endblock %}
+
+
+
+
+</body>
+</html>
