@@ -4,7 +4,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'u_12%_io2-+)nsz^ntqtxil2ah6c)34my$5==_o!c(#-g61@v='
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['blogger', ]
 
@@ -76,9 +76,24 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# this setting should contain folders from where ./manage.py collectstatic will collect static to project
+STATICFILES_DIRS = (
+    ("images", os.path.join(BASE_DIR, "general/img/")),
+    ("css", os.path.join(BASE_DIR, "general/css/")),
+    ("js", os.path.join(BASE_DIR, "general/js/")),
+)
+
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
 
 MEDIA_URL = '/media/'
 
@@ -92,3 +107,5 @@ CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.j
 # STATICFILES_DIRS = (
 #     os.path.join(BASE_DIR, "static"),
 # )
+
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
