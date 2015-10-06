@@ -18,6 +18,7 @@ INSTALLED_APPS = (
     'blog',
     'ckeditor',  # rich text editor
     'bootstrap3',
+    'sorl.thumbnail',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -99,9 +100,3 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 
-
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, "static"),
-# )
-
-# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)

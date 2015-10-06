@@ -1,15 +1,24 @@
 {% extends 'base.html' %}
 
-{% block title %}
+{% load thumbnail %}
 
-    <h1>Posts</h1>
+{% block title %}Posts{% endblock %}
+
+{% block content %}
+
+
     <div class="row">
         <div class="col-md-3">
             <div class="nav-right">
                 {% for post in object_list %}
+                    {% thumbnail post.image "400x200" crop="center" as im %}
+                        <a href="{{ post.get_absolute_url }}">
+                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                        </a>
+                    {% endthumbnail %}
                      <a href="{{ post.get_absolute_url }}">{{ post.title }}</a><br>
                      <a href="{{ post.get_absolute_url }}">{{ post.content|truncatechars:50|safe }}</a><br>
-                    {{ post.pub_date|date }}
+                    {{ post.pub_date|date }}<br>
                 {% endfor %}
             </div>
         </div>
