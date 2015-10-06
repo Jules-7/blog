@@ -4,9 +4,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'u_12%_io2-+)nsz^ntqtxil2ah6c)34my$5==_o!c(#-g61@v='
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['blogger', ]
+ALLOWED_HOSTS = ['http://techart.co.nr.dream.net.ua', ]
 
 INSTALLED_APPS = (
     'django.contrib.admin',
@@ -56,10 +56,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'blog',
-        'USER': 'root',
-        'PASSWORD': '123456',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'USER': 'blog',
+        'PASSWORD': 'eejeBaewee1f',
+        'HOST': '',
+        'PORT': '',
         'OPTIONS': {'init_command': 'SET storage_engine=INNODB, '
                                     'character_set_connection=utf8,'
                                     'collation_connection=utf8_unicode_ci'},
@@ -73,10 +73,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_L10N = True
-
-USE_TZ = True
-
-
 
 STATIC_URL = '/static/'
 

@@ -9,4 +9,4 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^blog/', include('blog.urls')),
     url(r'^$', main, name='main_page'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]

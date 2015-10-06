@@ -61,5 +61,5 @@ class Comment(models.Model):
         return self.text
 
     class Meta:
-        app_label = "bla"
+        verbose_name = u"Comment"
 
