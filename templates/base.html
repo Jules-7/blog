@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-{#{% load bootstrap3 %}#}
-{#{% bootstrap_css %}#}
-{#{% bootstrap_javascript %}#}
-{#{% bootstrap_messages %}#}
 
 <html lang="en">
 <head>
 
     <meta charset="UTF-8">
     <title></title>
-    <!-- Bootstrap -->
-        <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="{{ STATIC_URL }}css/bootstrap-responsive.css" rel="stylesheet">
+{#    --------------------------CSS-------------------------------------#}
     <script src="{{ STATIC_URL }}js/jquery-1.11.3.min.js"></script>
-    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
-{#    <link href="{% static 'css/bootstrap-fluid-adj.css' %}" rel="stylesheet">#}
+    <script src="{{ STATIC_URL }}js/slick.min.js"></script>
+    <script src="{{ STATIC_URL }}js/site.js"></script>
 
+{#    --------------------------CSS-------------------------------------#}
+    <link href="{{ STATIC_URL }}css/site.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/slick-theme.css"/>
 
 </head>
 <body>
 
-{% block title %}<h1>Blog</h1>{{ STATIC_URL }}{% endblock %}
+<h1>{% block title %}Blog{% endblock %}</h1>
 
 {% block content %}
 
-<div class="top_nav">
-    <a href="{% url "categories_list" %}">Categories</a><br>
-    <a href="{% url 'posts_list' %}">Posts</a><br>
-</div>
+    <div class="top_nav">
+        <a href="{% url "categories_list" %}">Categories</a><br>
+        <a href="{% url 'posts_list' %}">Posts</a><br>
+    </div>
 {% endblock %}
 
-{% block footer %}
-    <br><a href="{% url "main_page" %}">Main page</a><br>
-{% endblock %}
-
-
-
-<a href="http://www.freedomain.co.nr/" target="_blank" title="Free Domain" rel="nofollow"><img src="http://nussnoa.imdrv.net/but1.gif" width="88" height="31" border="0" alt="Free Domain" /></a>
+    <div id="footer">
+        {% block footer %}
+            <div class="main_link">
+                <br><a href="{% url "main_page" %}">Main page</a><span></span>
+            </div>
+        <!-- place link to freedomain, so free domain name works-->
+        <div class="freedomain">
+            <a href="http://www.freedomain.co.nr/" target="_blank" title="Free Domain" rel="nofollow"><img src="http://nussnoa.imdrv.net/but1.gif" width="88" height="31" border="0" alt="Free Domain" /></a>
+        </div>
+        {% endblock %}
+    </div> <!-- end footer div -->
 </body>
 </html>
