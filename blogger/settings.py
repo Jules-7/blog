@@ -6,7 +6,7 @@ SECRET_KEY = 'u_12%_io2-+)nsz^ntqtxil2ah6c)34my$5==_o!c(#-g61@v='
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['http://techart.co.nr.dream.net.ua', ]
+ALLOWED_HOSTS = ['techart.co.nr.dream.net.ua']
 
 INSTALLED_APPS = (
     'django.contrib.admin',
