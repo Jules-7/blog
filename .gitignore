@@ -1,7 +1,4 @@
 .idea/
 *.pyc
-blog/*.pyc
-blog/migrations/*.pyc
-blogger/*.pyc
 media/*
 
