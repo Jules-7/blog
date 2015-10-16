@@ -4,7 +4,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'u_12%_io2-+)nsz^ntqtxil2ah6c)34my$5==_o!c(#-g61@v='
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['http://techart.co.nr.dream.net.ua', ]
 
@@ -17,8 +17,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'blog',
     'ckeditor',  # rich text editor
-    'bootstrap3',
-    'sorl.thumbnail',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -34,23 +32,21 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'blogger.urls'
 
-TEMPLATE_CONTEXT_PROCESSORS = [
-    "django.contrib.auth.context_processors.auth",
-    "django.template.context_processors.debug",
-    "django.template.context_processors.i18n",
-    "django.template.context_processors.media",
-    "django.template.context_processors.static",
-    "django.template.context_processors.tz",
-    "django.contrib.messages.context_processors.messages",
-]
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
-            'context_processors': TEMPLATE_CONTEXT_PROCESSORS,
+            'context_processors': [
+                "django.contrib.auth.context_processors.auth",
+                "django.template.context_processors.debug",
+                "django.template.context_processors.i18n",
+                "django.template.context_processors.media",
+                "django.template.context_processors.static",
+                "django.template.context_processors.tz",
+                "django.contrib.messages.context_processors.messages",
+            ],
         },
     },
 ]
@@ -82,15 +78,6 @@ USE_L10N = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-# this setting should contain folders from which ./manage.py collectstatic will collect static to project
-STATICFILES_DIRS = (
-    ("images", os.path.join(BASE_DIR, "general/img/")),
-    ("css", os.path.join(BASE_DIR, "general/css/")),
-    ("js", os.path.join(BASE_DIR, "general/js/")),
-    ("media", os.path.join(BASE_DIR, "media")),
-)
-
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
