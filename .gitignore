@@ -1,8 +1,7 @@
 .idea/
 *.pyc
-<<<<<<< HEAD
-=======
 blog/*.pyc
 blog/migrations/*.pyc
 blogger/*.pyc
->>>>>>> f3db12b... Edit admin. Add blog post image. Disable bootstrap
+media/*
+

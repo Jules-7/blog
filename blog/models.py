@@ -50,8 +50,7 @@ class Post(models.Model):
         return reverse('post_detail', kwargs={'slug': self.slug})
 
     def admin_image(self):
-        print '<img src="%s/%s"/>' % (settings.MEDIA_URL, self.image)
-        return '<img src="%s/%s"/>' % (settings.MEDIA_URL, self.image)
+        return '<img src="%s/%s" width="100" height="50"/>' % (settings.MEDIA_URL, self.image)
 
     admin_image.allow_tags = True
 
