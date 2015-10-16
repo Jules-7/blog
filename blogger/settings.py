@@ -34,19 +34,23 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'blogger.urls'
 
+TEMPLATE_CONTEXT_PROCESSORS = [
+    "django.contrib.auth.context_processors.auth",
+    "django.template.context_processors.debug",
+    "django.template.context_processors.i18n",
+    "django.template.context_processors.media",
+    "django.template.context_processors.static",
+    "django.template.context_processors.tz",
+    "django.contrib.messages.context_processors.messages",
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.template.context_processors.static',
-                'django.contrib.messages.context_processors.messages',
-            ],
+            'context_processors': TEMPLATE_CONTEXT_PROCESSORS,
         },
     },
 ]
@@ -79,11 +83,12 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-# this setting should contain folders from where ./manage.py collectstatic will collect static to project
+# this setting should contain folders from which ./manage.py collectstatic will collect static to project
 STATICFILES_DIRS = (
     ("images", os.path.join(BASE_DIR, "general/img/")),
     ("css", os.path.join(BASE_DIR, "general/css/")),
     ("js", os.path.join(BASE_DIR, "general/js/")),
+    ("media", os.path.join(BASE_DIR, "media")),
 )
 
 
