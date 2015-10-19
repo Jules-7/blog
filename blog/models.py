@@ -3,7 +3,8 @@ from django.core.urlresolvers import reverse
 from django.db import models
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
-from sorl.thumbnail import ImageField
+#from sorl.thumbnail import ImageField
+from taggit.managers import TaggableManager
 
 
 class Category(models.Model):
@@ -36,7 +37,8 @@ class Post(models.Model):
     category = models.ForeignKey(Category, related_name='posts', verbose_name="category")
     user = models.ForeignKey(User, related_name="posts", verbose_name="user")
     like = models.IntegerField(default=0, verbose_name="likes")
-    image = ImageField(upload_to='posts')
+    image = models.ImageField(upload_to='posts')
+    tags = TaggableManager()
 
     class Meta:
         verbose_name = "Post"

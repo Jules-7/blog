@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Find posts by tags{% endblock %}
+
+{% block content %}
+    <div class="all_tags">
+        {% for tag_name, tag_freq in tags_dict.items %}
+            <div class="tag" data-freq="{{ tag_freq }}" data-name="{{ tag_name }}"><a href="{% url 'posts_by_tag' tag_name=tag_name %}" class="">{{ tag_name }}</a></div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

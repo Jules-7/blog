@@ -17,6 +17,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'blog',
     'ckeditor',  # rich text editor
+    'taggit',
 )
 
 MIDDLEWARE_CLASSES = (

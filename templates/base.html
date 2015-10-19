@@ -3,36 +3,42 @@
 
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <title></title>
-{#    --------------------------CSS-------------------------------------#}
+{#    ----------------------------JS------------------------------------#}
     <script src="{{ STATIC_URL }}js/jquery-1.11.3.min.js"></script>
     <script src="{{ STATIC_URL }}js/slick.min.js"></script>
     <script src="{{ STATIC_URL }}js/site.js"></script>
-
 {#    --------------------------CSS-------------------------------------#}
     <link href="{{ STATIC_URL }}css/site.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/slick.css"/>
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/slick-theme.css"/>
-
 </head>
 <body>
 
-<h1>{% block title %}Blog{% endblock %}</h1>
+<h1>{% block title %}{% endblock %}</h1>
 
 {% block content %}
-
-    <div class="top_nav">
-        <a href="{% url "categories_list" %}">Categories</a><br>
-        <a href="{% url 'posts_list' %}">Posts</a><br>
+    <div class="wrapper">
+        <div class="big_image"></div>
+        <div class="nav_bar_wrapper">
+            <div class="all_posts">
+                <a href="{% url 'posts_list' %}">Checkout our Posts</a>
+            </div>
+            <div class="recent_posts">
+                <a href="">Recent Posts</a>
+            </div>
+            <div class="posts_by_tag">
+                <a href="{% url 'tags' %}">Find Posts by Tag</a>
+            </div>
+        </div>
     </div>
 {% endblock %}
 
     <div id="footer">
         {% block footer %}
             <div class="main_link">
-                <br><a href="{% url "main_page" %}">Main page</a><span></span>
+                <br><a href="{% url "main_page" %}">Go Home</a><span></span>
             </div>
         <!-- place link to freedomain, so free domain name works-->
         <div class="freedomain">
